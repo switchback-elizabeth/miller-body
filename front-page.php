@@ -47,10 +47,13 @@ remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 add_action('genesis_entry_content', 'home_intro');
 add_action('genesis_entry_content', 'home_services');
 add_action('genesis_entry_content', 'home_gallery');
+add_action('genesis_entry_content', 'home_testimonials');
+add_action('genesis_entry_content', 'home_form');
+add_action('genesis_entry_content', 'home_maps');
 
 
 function home_intro(){	?>
-	<section class="home-1 wrap">
+	<section class="intro wrap">
 		<div>
 			<?php the_content(); ?>
 		</div>
@@ -107,9 +110,37 @@ function home_services(){ ?>
 }
 
 function home_gallery(){ ?>
-	<section class="home-3 wrap">
+	<section class="landing-gallery wrap">
 	  <h2>Before & After</h2>
 	  [images here]
+	</section>
+<?php
+}
+
+function home_testimonials(){ ?>
+	<section class="landing-testimonials wrap">
+	  <h2>Patient Testimonials</h2>
+	  [testimonials here]
+	</section>
+<?php
+}
+
+function home_form(){ ?>
+	<section class="landing-form wrap">
+	  <h2>Request a Consultation</h2>
+	  [testimonials here]
+	</section>
+<?php
+}
+
+function home_maps(){ ?>
+	<section class="landing-maps wrap">
+	  <div class="one-half first">
+			[map here]
+		</div>
+		<div class="one-half">
+			[map here]
+		</div>
 	</section>
 <?php
 }
