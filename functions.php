@@ -46,6 +46,25 @@ require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-output.p
 // Adds the Genesis Connect WooCommerce notice.
 require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-notice.php';
 
+// Admin area Message
+function remove_footer_admin () {
+echo 'Site powered by <a href="https://www.pumc.com" title="Visit PUMC.com">PUMC</a>. Need help? Email <a href="mailto:pumcweb@pumc.com" title="Send an email">pumcweb@pumc.com</a>.';
+}
+add_filter('admin_footer_text', 'remove_footer_admin');
+
+//TODO: Update category #
+// Exclude gallery posts from blog
+function exclude_gallery($query) {
+if ( $query->is_home() ) {
+  $query->set('cat', '-61');
+}
+  return $query;
+}
+add_filter('pre_get_posts', 'exclude_gallery');
+
+// Remove title tag support to enable force rewrites in Yoast SEO
+remove_theme_support( 'title-tag' );
+
 add_action( 'after_setup_theme', 'genesis_child_gutenberg_support' );
 /**
  * Adds Gutenberg opt-in features and styling.

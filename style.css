@@ -102,6 +102,15 @@ html {
 	box-sizing: inherit;
 }
 
+/* Global Variables */
+
+:root {
+    --dark: #2a2c32;
+    --accent: #1ca2c3;
+    --body: "Lato", sans-serif;
+    --heading: "Al Fresco", script;
+}
+
 /* Float Clearing
 --------------------------------------------- */
 
@@ -156,10 +165,10 @@ html {
 
 body {
 	background-color: #fff;
-	color: #333;
-	font-family: "Source Sans Pro", sans-serif;
-	font-size: 18px;
-	font-weight: 400;
+	color: #000;
+	font-family: var(--body);
+	font-size: 16px;
+	font-weight: 300;
 	line-height: 1.625;
 	margin: 0;
 	overflow-x: hidden;
@@ -172,7 +181,11 @@ input[type="reset"],
 input[type="submit"],
 textarea:focus,
 .button,
-.gallery img {
+.gallery img,
+section.category-boxes > div,
+section.category-boxes > div:after,
+section.category-boxes > div > div p,
+section.category-boxes > div > div a  {
 	transition: all 0.2s ease-in-out;
 }
 
@@ -242,10 +255,11 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: var(--body);
 	font-weight: 400;
 	line-height: 1.2;
 	margin: 0 0 20px;
+	text-transform: uppercase;
 }
 
 h1 {
@@ -262,11 +276,6 @@ h3 {
 
 h4 {
 	font-size: 20px;
-}
-
-.entry-content h3,
-.entry-content h4 {
-	font-weight: 600;
 }
 
 .entry-content h4 {
@@ -420,14 +429,14 @@ input[type="submit"],
 .button {
 	background-color: #333;
 	border: 0;
-	border-radius: 5px;
 	color: #fff;
 	cursor: pointer;
 	font-size: 16px;
-	font-weight: 600;
-	padding: 15px 30px;
+	font-weight: 400;
+	padding: 10px 30px;
 	text-align: center;
 	text-decoration: none;
+	text-transform: uppercase;
 	white-space: normal;
 	width: auto;
 }
@@ -584,9 +593,130 @@ th {
 .site-inner {
 	clear: both;
 	margin: 0 auto;
-	padding: 60px 30px 0;
 }
 
+.wrap {
+    padding: 60px 6% 0;
+}
+
+/* Home Page
+--------------------------------------------- */
+section.category-boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+section.category-boxes > div {
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 7%;
+	position: relative;
+	z-index: 1;
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 400px;
+}
+
+section.category-boxes > div:after {
+	content:'';
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	background: var(--dark);
+	opacity: .5;
+	height: 100%; 
+	width: 100%;
+	z-index: -1;
+}
+
+section.category-boxes > div:hover:after {
+	opacity: .9;
+}
+
+section.category-boxes div:hover > div {
+    background: rgb(28,162,195);
+    background: linear-gradient(45deg, rgba(28,162,195,0.19511554621848737) 0%, rgba(28,162,195,1) 50%, rgba(28,162,195,0.20351890756302526) 100%);
+}
+
+section.category-boxes div > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+    min-height: 300px;
+    padding: 7%;
+    text-align: center;
+    position: absolute;
+    width: 88%;
+    height: 88%;
+}
+
+section.category-boxes h3 {
+	font-size: 30px;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+section.category-boxes > div > div p,
+section.category-boxes > div > div a {
+	opacity: 0;
+}
+
+section.category-boxes > div > div p {
+	height: 0;
+	margin: 0;
+	max-height: 150px;
+	display: block;
+}
+
+section.category-boxes > div > div a {
+	margin-top: -48px;
+}
+
+section.category-boxes > div:hover div p {
+	height: 100%;
+	opacity: 1;
+	margin-top: 20px;
+}
+
+section.category-boxes > div:hover div a {
+	opacity: 1;
+	margin-top: 0;
+}
+
+section.category-boxes > div:first-child {
+	background-image: url('/millerbody/wp-content/themes/miller-body/images/category-coolsculpting.jpg');
+}
+
+section.category-boxes > div:nth-child(2) {
+	background-image: url('/millerbody/wp-content/themes/miller-body/images/category-smartlipo.jpg');
+}
+
+section.category-boxes > div:nth-child(3) {
+	background-image: url('/millerbody/wp-content/themes/miller-body/images/category-cellulite.jpg');
+}
+
+section.category-boxes > div:nth-child(4) {
+	background-image: url('/millerbody/wp-content/themes/miller-body/images/category-skin-tightening.jpg');
+}
+
+section.category-boxes > div:nth-child(5) {
+	background-image: url('/millerbody/wp-content/themes/miller-body/images/category-other.jpg');
+}
+
+section.category-boxes > div:nth-child(6) {
+	background-image: url('/millerbody/wp-content/themes/miller-body/images/category-specials.jpg');
+}
+
+section.category-boxes div > div .button {
+	background-color: transparent;
+	border: 1px solid #fff;
+}
 
 /* Common Classes
 ---------------------------------------------------------------------------- */
@@ -987,7 +1117,8 @@ figcaption,
 ---------------------------------------------------------------------------- */
 
 .site-header {
-	background-color: #fff;
+	background-color: var(--dark);
+	color: #fff;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
 	padding: 0 30px;
 }
@@ -1026,7 +1157,7 @@ figcaption,
 .site-title a,
 .site-title a:focus,
 .site-title a:hover {
-	color: #333;
+	color: #fff;
 	text-decoration: none;
 }
 
@@ -1565,19 +1696,11 @@ p.entry-meta {
 		padding-right: 15px;
 	}
 
-	/* Site-Inner
-	--------------------------------------------- */
-
-	.site-inner {
-		max-width: 1140px;
-	}
-
 	/* Content
 	--------------------------------------------- */
 
 	.content {
 		float: left;
-		width: 65%;
 	}
 
 	.sidebar-content .content {
