@@ -1,0 +1,41 @@
+/*Header Right */
+
+<img src="/millerbody/wp-content/themes/miller-body/images/review-placeholder.png" title="5 Star Reviews" alt="5 Star Reviews"/><p><span class="number">603-898-3461</span><br/>Request a Consultation</p>
+
+/* Footer Widget 1 */
+
+<div class="associations">
+<a href="#"><img src="/millerbody/wp-content/themes/miller-body/images/associations/cs.jpg" alt="CoolSculpting® Cerfitied Practice logo"></a>
+<a href="#"><img src="/millerbody/wp-content/themes/miller-body/images/associations/aslms.jpg" alt="ASLMS logo"></a>
+<a href="#"><img src="/millerbody/wp-content/themes/miller-body/images/associations/acp.jpg" alt="ACP logo"></a>
+<a href="#"><img src="/millerbody/wp-content/themes/miller-body/images/associations/ascp.jpg" alt="ASCP logo"></a>
+<a href="#"><img src="/millerbody/wp-content/themes/miller-body/images/associations/iac.jpg" alt="IAC logo"></a>
+</div>
+<div class="socials">
+<a href="facebook" title="#"></a>
+<a href="instagram" title="#"></a>
+<a href="linkedin" title="#"></a>
+<a href="pinterest" title="#"></a>
+<a href="twitter" title="#"></a>
+<a href="youtube" title="#"></a>
+<a href="blog" title="#"></a>
+<a href="google" title="#"></a>
+</div>
+
+/* THEME SETTINGS > FOOTER */
+
+<span>*Comments from all success stories and reviews are the expressed opinions of those patients and their experience and do not represent guaranteed results. All before and after photo results vary and are not guaranteed.</span>
+
+<span>Dr. Miller specializes in body enhancements and medical spa treatments including procedures such as: liposuction, laser resurfacing, laser hair removal, vein therapy, acne treatments, facial fillers, facial treatments, chemical peel, body contouring, body sculpting, fat reduction, cellulite reduction, lipodissolve. Dr. Miller 's practices are located in Salem and Nashua, NH. Patients from the following cities and areas such as Windham, Hampstead, Derry, Manchester, Londonderry, Pelham, Amherst, Hollis, Merrimack, Bedford in New Hampshire (NH), as well as North Andover, Andover, Haverhill, Methuen, Pepperell, Tyngsboro and Lowell in Massachusetts (MA) can conveniently schedule an appointment with our Salem and Nashua, New Hampshire (NH) offices.</span>
+
+<span>Site designed and powered by PUMC. [footer_copyright before="Copyright "] Aesthetic & Vein Center MD - All rights reserved. Registered at beautify.com. Aesthetic & Vein Center MD is the trademark owned by Dr. Normand Miller and is registered with the US Trademark office. Unauthorized use will result in legal sanction as provided by law.</span>
+
+<span>This website does not contain medical advice and the use of this website does not create a physician/patient relationship between you and Dr. Miller.</span>
+
+<span>The photographs of models displayed on this website are for decorative purposes only. For possible results see before & after photos of Dr. Miller’s patients.</span>
+
+<p>Site designed and powered by PUMC. [footer_copyright before="Copyright "] Aesthetic & Vein Center MD - All rights reserved. Registered at beautify.com. Aesthetic & Vein Center MD is the trademark owned by Dr. Normand Miller and is registered with the US Trademark office. Unauthorized use will result in legal sanction as provided by law.</p>
+
+<p>This website does not contain medical advice and the use of this website does not create a physician/patient relationship between you and Dr. Miller.</p>
+
+<p>The photographs of models displayed on this website are for decorative purposes only. For possible results see before & after photos of Dr. Miller’s patients.</p>
