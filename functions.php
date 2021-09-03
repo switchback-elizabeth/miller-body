@@ -80,6 +80,7 @@ if ( function_exists( 'genesis_register_responsive_menus' ) ) {
 	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
 }
 
+// TODO: Add all fonts
 add_action( 'wp_enqueue_scripts', 'miller_body_enqueue_scripts_styles' );
 /**
  * Enqueues scripts and styles.
@@ -215,9 +216,6 @@ function miller_body_post_type_support() {
 add_image_size( 'sidebar-featured', 75, 75, true );
 add_image_size( 'genesis-singular-images', 702, 526, true );
 
-// Removes header right widget area.
-unregister_sidebar( 'header-right' );
-
 // Removes secondary sidebar.
 unregister_sidebar( 'sidebar-alt' );
 
@@ -226,9 +224,17 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
-// Repositions primary navigation menu.
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-add_action( 'genesis_header', 'genesis_do_nav', 12 );
+//* Remove support for structural wraps
+remove_theme_support( 'genesis-structural-wraps' );
+
+// TODO: Remove unused wraps
+//* Add support for structural wraps
+add_theme_support( 'genesis-structural-wraps', array(
+	'header',
+	// 'menu-primary',
+	'menu-secondary',
+	// 'site-inner',
+) );
 
 // Repositions the secondary navigation menu.
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
@@ -283,3 +289,7 @@ function miller_body_comments_gravatar( $args ) {
 	return $args;
 
 }
+
+// Reposition the footer widgets
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_after_footer', 'genesis_footer_widget_areas', 1 );

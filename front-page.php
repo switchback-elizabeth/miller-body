@@ -54,9 +54,7 @@ add_action('genesis_entry_content', 'home_maps');
 
 function home_intro(){	?>
 	<section class="intro wrap">
-		<div>
 			<?php the_content(); ?>
-		</div>
 	</section>
 <?php
 }
