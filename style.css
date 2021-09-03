@@ -619,6 +619,7 @@ section.category-boxes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 section.category-boxes>div {
@@ -1593,7 +1594,8 @@ p.entry-meta {
     border: 1px dashed purple;
     background: #c0ffee;
     display:  flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
 }
