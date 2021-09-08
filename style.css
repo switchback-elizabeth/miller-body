@@ -696,12 +696,12 @@ section.category-boxes>div:hover:after {
   opacity: .9;
 }
 
-section.category-boxes div:hover>div {
+section.category-boxes > div:hover > div {
   background: var(--accent);
   background: linear-gradient(45deg, var(--light) 3%, var(--accent) 47%, var(--accent) 53%, var(--light) 97%);
 }
 
-section.category-boxes div>div {
+section.category-boxes > div > div {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -777,6 +777,45 @@ section.category-boxes div>div .button {
   border: 1px solid #fff;
 }
 
+/* Exclude 6th box */
+section.category-boxes>div:nth-child(6):after {
+    display: none;
+}
+
+section.category-boxes > div:nth-child(6):hover > div {
+ background: rgb(255 255 255 / .9);
+}
+
+section.category-boxes>div:nth-child(6) div {
+	color: var(--dark);
+	font-size: 18px;
+	text-transform: uppercase;
+	max-width: 70%;
+	background-color: rgb(255 255 255 / .9);
+	outline: 10px solid rgb(255 255 255 / 60%);
+	height: fit-content;
+}
+
+section.category-boxes>div:nth-child(6) div p {
+  height: 100%;
+  opacity: 1;
+  margin-top: 20px;
+}
+
+section.category-boxes>div:nth-child(6) div a {
+  background-color: var(--dark);
+  border: none;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+section.category-boxes>div:nth-child(6) div span {
+	font-size: 36px;
+	font-weight: 700;
+	color: var(--accent);
+}
+
+/* Gallery section */
 section.landing-gallery {
   background-color: var(--dark);
   background-image: url('/millerbody/wp-content/themes/miller-body/images/pattern.png');
@@ -784,6 +823,7 @@ section.landing-gallery {
   text-align: center;
 }
 
+/* Testimonials section */
 section.landing-testimonials {
 	background-image: url('/millerbody/wp-content/themes/miller-body/images/digital-bg-vertical.png');
 	background-position: center center;

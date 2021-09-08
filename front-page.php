@@ -96,8 +96,8 @@ function landing_services(){ ?>
 		<div>
 			<div>
 		  	<h3>Special Offer</h3>
-		  	<p>Are you frustrated that you can’t get rid of cellulite no matter how hard you try? You’ve tried special diets, exercising and purchased all types of lotions and potions with limited or no visible results.</p>
-		  	<a href="#" class="button" title="Visit the CoolSculpting® page">Learn More</a>
+		  	<p><span>$250 OFF</span> CoolSculpting®</p>
+		  	<a href="#" class="button" title="Visit the CoolSculpting® page">Book Now</a>
 			</div>
 		</div>
   </section>
