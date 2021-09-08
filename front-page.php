@@ -44,22 +44,19 @@ remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 
 remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 
-add_action('genesis_entry_content', 'home_intro');
-add_action('genesis_entry_content', 'home_services');
-add_action('genesis_entry_content', 'home_gallery');
-add_action('genesis_entry_content', 'home_testimonials');
-add_action('genesis_entry_content', 'home_form');
-add_action('genesis_entry_content', 'home_maps');
+add_action('genesis_entry_content', 'landing_intro');
+add_action('genesis_entry_content', 'landing_services');
+add_action('genesis_entry_content', 'landing_gallery');
+add_action('genesis_entry_content', 'landing_testimonials');
 
-
-function home_intro(){	?>
+function landing_intro(){	?>
 	<section class="intro wrap">
 			<?php the_content(); ?>
 	</section>
 <?php
 }
 
-function home_services(){ ?>
+function landing_services(){ ?>
   <section class="category-boxes">
 		<div>
 			<div>
@@ -107,42 +104,25 @@ function home_services(){ ?>
 <?php
 }
 
-function home_gallery(){ ?>
+function landing_gallery(){ ?>
 	<section class="landing-gallery wrap">
-	  <h2>Before & After</h2>
-	  [images here]
+	  <h2 class="ornate">Gallery</h2>
+
 	</section>
 <?php
 }
 
-function home_testimonials(){ ?>
+function landing_testimonials(){ ?>
 	<section class="landing-testimonials wrap">
-	  <h2>Patient Testimonials</h2>
+	  <h2 class="ornate">Testimonial</h2>
 	  [testimonials here]
-	</section>
-<?php
-}
-
-function home_form(){ ?>
-	<section class="landing-form wrap">
-	  <h2>Request a Consultation</h2>
-	  [testimonials here]
-	</section>
-<?php
-}
-
-function home_maps(){ ?>
-	<section class="landing-maps wrap">
-	  <div class="one-half first">
-			[map here]
-		</div>
-		<div class="one-half">
-			[map here]
+		<div>
+			<a class="button" class="Visit testimonials page">Read More Testimonials</a>
+			<a class="button" title="Write us a testimonial">Tell Us About Your Experience</a>
 		</div>
 	</section>
 <?php
 }
-
 
 // Forces full width content layout.
 add_filter( 'genesis_site_layout', '__genesis_return_full_width_content' );

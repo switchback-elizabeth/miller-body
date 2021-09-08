@@ -109,6 +109,9 @@ function miller_body_enqueue_scripts_styles() {
 		);
 	}
 
+	// Typekit Fonts
+	wp_enqueue_style( 'mille-body-typekit-fonts', '//use.typekit.net/ljt4kli.css');
+
 }
 
 add_filter( 'body_class', 'miller_body_body_classes' );
@@ -193,6 +196,9 @@ function miller_body_theme_support() {
 	}
 
 }
+
+// Allow Gravity Form to be embedded in theme file
+gravity_form_enqueue_scripts( 1, false );
 
 add_action( 'after_setup_theme', 'miller_body_post_type_support', 9 );
 /**
@@ -290,6 +296,44 @@ function miller_body_comments_gravatar( $args ) {
 
 }
 
+// Footer
+add_action('genesis_before_footer', 'footer_form');
+add_action('genesis_before_footer', 'footer_maps');
+
+function footer_form(){ ?>
+	<section class="landing-form wrap">
+	  <?php gravity_form( 1, true, false, false, '', false ); ?>
+	</section>
+<?php
+}
+
+function footer_maps(){ ?>
+	<section class="landing-maps wrap">
+	  <div class="one-half first">
+			<div class="card">
+				<h4>Salem Office</h4>
+				<address>
+					224 Main Street, Suite 1-D
+					<br/>Salem, NH 03079</address>
+					<a href="tel:6038983461" title="Call now"><span class="number">603-898-3461</span></a>
+					<img src="/millerbody/wp-content/themes/miller-body/images/map-salem.jpg" title="Salem office location" alt="Map of the Salem area around AVCMD"/>
+			</div>
+		</div>
+		<div class="one-half">
+			<div class="card">
+				<h4>Nashua Office</h4>
+				<address>
+					400 Amherst Street, Suite 402
+					<br/>Nashua, NH 03063</address>
+					<a href="tel:6038983461" title="Call now"><span class="number">603-898-3461</span></a>
+					<img src="/millerbody/wp-content/themes/miller-body/images/map-nashua.jpg" title="Nashua office location" alt="Map of the Nashua area around AVCMD"/>
+			</div>
+		</div>
+	</section>
+<?php
+}
+
+//TODO: Social icons
 // Reposition the footer widgets
 remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
 add_action( 'genesis_after_footer', 'genesis_footer_widget_areas', 1 );
