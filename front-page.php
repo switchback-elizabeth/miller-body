@@ -115,7 +115,6 @@ function landing_gallery(){ ?>
 function landing_testimonials(){ ?>
 	<section class="landing-testimonials wrap">
 	  <h2 class="ornate">Testimonial</h2>
-	  [testimonials here]
 		<div>
 			<a class="button" class="Visit testimonials page">Read More Testimonials</a>
 			<a class="button" title="Write us a testimonial">Tell Us About Your Experience</a>

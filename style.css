@@ -809,6 +809,10 @@ section.category-boxes>div:nth-child(6) div a {
   margin-top: 15px;
 }
 
+section.category-boxes>div:nth-child(6) div a:hover {
+	background-color: var(--accent);
+}
+
 section.category-boxes>div:nth-child(6) div span {
 	font-size: 36px;
 	font-weight: 700;
@@ -1689,6 +1693,8 @@ section.landing-form div#gform_wrapper_1 {
 section.landing-maps.wrap {
     background-image: url('/millerbody/wp-content/themes/miller-body/images/map-bg.jpg');
     min-height: 300px;
+    background-size:  cover;
+    background-repeat:  no-repeat;
 }
 
 .card {
