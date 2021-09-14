@@ -106,8 +106,8 @@ html {
   --dark: #2a2c32;
   --accent: #1ca2c3;
   --accent-rgb: 28, 162, 195;
-  --light: rgba(var(--accent-rgb), .1);
-  --medium: rgba(var(--accent-rgb), .2);
+  --accent-light: rgba(var(--accent-rgb), .1);
+  --accent-medium: rgba(var(--accent-rgb), .2);
   --body: "Lato", sans-serif;
   --heading: "Al Fresco", script;
   --signature: "WindSong", script;
@@ -623,7 +623,7 @@ th {
 }
 
 .shadow {
-  box-shadow: 20px 20px 0 var(--light);
+  box-shadow: 20px 20px 0 var(--accent-light);
   margin-right: 20px;
   margin-bottom: 20px;
 }
@@ -643,7 +643,7 @@ section.intro {
 }
 
 section.intro:before {
-  background-color: var(--light);
+  background-color: var(--accent-light);
   content: '';
   height: 100%;
   left: 0;
@@ -714,7 +714,7 @@ section.category-boxes>div:hover:after {
 
 section.category-boxes>div:hover>div {
   background: var(--accent);
-  background: linear-gradient(45deg, var(--light) 3%, var(--accent) 47%, var(--accent) 53%, var(--light) 97%);
+  background: linear-gradient(45deg, var(--accent-light) 3%, var(--accent) 47%, var(--accent) 53%, var(--accent-light) 97%);
 }
 
 section.category-boxes>div>div {
@@ -959,7 +959,7 @@ section.landing-testimonials {
 .entry-title {
   font-size: 30px;
   margin-bottom: 10px;
-  border-bottom: 1px solid var(--medium);
+  border-bottom: 1px solid var(--accent-medium);
   padding-bottom: 15px;
 }
 
@@ -1699,8 +1699,8 @@ p.entry-meta {
 }
 
 .sidebar .widget {
-  background-color: var(--medium);
-  box-shadow: 20px 20px 0 var(--light);
+  background-color: var(--accent-medium);
+  box-shadow: 20px 20px 0 var(--accent-light);
   margin-right: 20px;
   margin-bottom: 40px;
   padding: 15px;
@@ -1710,7 +1710,7 @@ p.entry-meta {
   background: url('/wp-content/themes/miller-body/images/digital-bg-vertical.png');
   background-attachment: fixed;
   background-position: -300px center;
-  border: 1px solid var(--light);
+  border: 1px solid var(--accent-light);
 }
 
 .sidebar p {
@@ -1720,7 +1720,7 @@ p.entry-meta {
 /* Before Footer
 ---------------------------------------------------------------------------- */
 section.landing-form {
-  background-color: var(--light);
+  background-color: var(--accent-light);
   min-height: 400px;
   padding: 120px 6%;
 }
