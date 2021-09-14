@@ -304,7 +304,7 @@ function footer_maps(){ ?>
 					224 Main Street, Suite 1-D
 					<br/>Salem, NH 03079</address>
 					<a href="tel:6038983461" title="Call now"><span class="number">603-898-3461</span></a>
-					<img src="/millerbody/wp-content/themes/miller-body/images/map-salem.jpg" title="Salem office location" alt="Map of the Salem area around AVCMD"/>
+					<img src="/wp-content/themes/miller-body/images/map-salem.jpg" title="Salem office location" alt="Map of the Salem area around AVCMD"/>
 			</div>
 		</div>
 		<div class="one-half">
@@ -314,7 +314,7 @@ function footer_maps(){ ?>
 					400 Amherst Street, Suite 402
 					<br/>Nashua, NH 03063</address>
 					<a href="tel:6038983461" title="Call now"><span class="number">603-898-3461</span></a>
-					<img src="/millerbody/wp-content/themes/miller-body/images/map-nashua.jpg" title="Nashua office location" alt="Map of the Nashua area around AVCMD"/>
+					<img src="/wp-content/themes/miller-body/images/map-nashua.jpg" title="Nashua office location" alt="Map of the Nashua area around AVCMD"/>
 			</div>
 		</div>
 	</section>
