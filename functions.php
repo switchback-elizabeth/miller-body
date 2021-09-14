@@ -1,8 +1,8 @@
 <?php
 /**
- * Genesis Sample.
+ * Aesthetic Body Shaping.
  *
- * This file adds functions to the Genesis Sample Theme.
+ * This file adds functions to the Aesthetic Body Shaping theme.
  *
  * @package Genesis Sample
  * @author  StudioPress
@@ -52,16 +52,6 @@ echo 'Site powered by <a href="https://www.pumc.com" title="Visit PUMC.com">PUMC
 }
 add_filter('admin_footer_text', 'remove_footer_admin');
 
-//TODO: Update category #
-// Exclude gallery posts from blog
-function exclude_gallery($query) {
-if ( $query->is_home() ) {
-  $query->set('cat', '-61');
-}
-  return $query;
-}
-add_filter('pre_get_posts', 'exclude_gallery');
-
 // Remove title tag support to enable force rewrites in Yoast SEO
 remove_theme_support( 'title-tag' );
 
@@ -75,12 +65,6 @@ function genesis_child_gutenberg_support() { // phpcs:ignore WordPress.NamingCon
 	require_once get_stylesheet_directory() . '/lib/gutenberg/init.php';
 }
 
-// Registers the responsive menus.
-if ( function_exists( 'genesis_register_responsive_menus' ) ) {
-	genesis_register_responsive_menus( genesis_get_config( 'responsive-menus' ) );
-}
-
-// TODO: Add all fonts
 add_action( 'wp_enqueue_scripts', 'miller_body_enqueue_scripts_styles' );
 /**
  * Enqueues scripts and styles.
@@ -110,7 +94,7 @@ function miller_body_enqueue_scripts_styles() {
 	}
 
 	// Typekit Fonts
-	wp_enqueue_style( 'mille-body-typekit-fonts', '//use.typekit.net/ljt4kli.css');
+	wp_enqueue_style( 'miller-body-typekit-fonts', '//use.typekit.net/ljt4kli.css');
 
 }
 
@@ -230,21 +214,21 @@ genesis_unregister_layout( 'content-sidebar-sidebar' );
 genesis_unregister_layout( 'sidebar-content-sidebar' );
 genesis_unregister_layout( 'sidebar-sidebar-content' );
 
-//* Remove support for structural wraps
+// Remove support for structural wraps
 remove_theme_support( 'genesis-structural-wraps' );
 
-// TODO: Remove unused wraps
-//* Add support for structural wraps
-add_theme_support( 'genesis-structural-wraps', array(
-	'header',
-	// 'menu-primary',
-	'menu-secondary',
-	// 'site-inner',
-) );
+// Remove the primary navigation menu.
+remove_action( 'genesis_after_header', 'genesis_do_nav' );
+
+// Add Mega Menu
+function miller_body_menu(){
+	wp_nav_menu( array( 'theme_location' => 'primary' ) );
+}
+add_action( 'genesis_header', 'miller_body_menu', 14 );
 
 // Repositions the secondary navigation menu.
 remove_action( 'genesis_after_header', 'genesis_do_subnav' );
-add_action( 'genesis_footer', 'genesis_do_subnav', 10 );
+add_action( 'genesis_before_footer', 'genesis_do_subnav', 20 );
 
 add_filter( 'wp_nav_menu_args', 'miller_body_secondary_menu_args' );
 /**
@@ -300,6 +284,10 @@ function miller_body_comments_gravatar( $args ) {
 add_action('genesis_before_footer', 'footer_form');
 add_action('genesis_before_footer', 'footer_maps');
 
+// Reposition the footer widgets
+remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
+add_action( 'genesis_after_footer', 'genesis_footer_widget_areas', 1 );
+
 function footer_form(){ ?>
 	<section class="landing-form wrap">
 	  <?php gravity_form( 1, true, false, false, '', false ); ?>
@@ -332,8 +320,3 @@ function footer_maps(){ ?>
 	</section>
 <?php
 }
-
-//TODO: Social icons
-// Reposition the footer widgets
-remove_action( 'genesis_before_footer', 'genesis_footer_widget_areas' );
-add_action( 'genesis_after_footer', 'genesis_footer_widget_areas', 1 );
